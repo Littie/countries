@@ -2,14 +2,15 @@
 
 @section('content_area')
     <div>
-        <a href="{{ route('countries.create') }}" class="btn btn-primary btn-success">Create country</a>
+        <a href="{{ route('countries.create') }}"
+           class="btn btn-primary btn-success">{{ trans('countries.index.buttons.create') }}</a>
     </div>
     <table class="table">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Code</th>
-            <th>Actions</th>
+            <th>{{ trans('countries.index.table.headers.name') }}</th>
+            <th>{{ trans('countries.index.table.headers.code') }}</th>
+            <th>{{ trans('countries.index.table.headers.action') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -21,14 +22,15 @@
                 <td>{{ $country->getAttribute('code')}}</td>
                 <td>
                     <div class="action-block">
-                        <a class="btn btn-primary country_edit" href="{{ route('countries.edit', ['id' => $country]) }}">
+                        <a class="btn btn-primary country_edit"
+                           href="{{ route('countries.edit', ['id' => $country]) }}">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
                         <form method="POST" action="{{ route('countries.destroy', ['id' => $country]) }}">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <button class="btn btn-danger" type="submit">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </form>
                     </div>
