@@ -116,7 +116,7 @@ class CitiesController extends Controller
      * @return View
      */
     public function show(Cities $city): View
-    {$a = '';
+    {
         return view('cities.show',
             [
                 'city'   => $city,
