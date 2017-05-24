@@ -90,7 +90,7 @@ class CountriesController extends Controller
 
         $country->languages()->sync($request->get('languages'));
 
-        return redirect()->route('countries.index');
+        return redirect()->route('countries.show', ['country' => $country]);
     }
 
     /**

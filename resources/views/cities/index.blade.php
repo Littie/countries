@@ -16,7 +16,7 @@
                 </td>
                 <td>
                     <div class="action-block">
-                        <a class="btn btn-primary city_edit" href="{{ route('cities.edit', ['id' => $city]) }}">
+                        <a class="btn btn-primary city_edit" href="{{ route('cities.edit', ['country' => $city->country, 'city' => $city]) }}">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
                         <form method="POST" action="{{ route('cities.destroy', ['id' => $city]) }}">

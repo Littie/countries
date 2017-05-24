@@ -51,8 +51,8 @@ class CitiesController extends Controller
      * Store city to db.
      *
      * @param CityRequest $request
-     *
      * @param Countries $country
+     * 
      * @return RedirectResponse
      */
     public function store(CityRequest $request, Countries $country): RedirectResponse
@@ -69,13 +69,14 @@ class CitiesController extends Controller
     /**
      * Display edit city page.
      *
+     * @param Countries $country
      * @param Cities $city
      *
      * @return View
      */
-    public function edit(Cities $city): View
+    public function edit(Countries $country, Cities $city): View
     {
-        return view('countries.edit',
+        return view('cities.edit',
             [
                 'city'   => $city,
                 'languages' => Languages::all()->diff($city->country->languages),
@@ -87,17 +88,18 @@ class CitiesController extends Controller
      * Update city in db.
      *
      * @param CityRequest $request
+     * @param Countries $country
      * @param Cities $city
      *
      * @return RedirectResponse
      */
-    public function update(CityRequest $request, Cities $city): RedirectResponse
+    public function update(CityRequest $request, Countries $country, Cities $city): RedirectResponse
     {
-//        $country->update($request->only(['name', 'code']));
-//
-//        $country->languages()->sync($request->get('languages'));
+        $city->update($request->only(['name']));
 
-        return redirect()->route('countries.index');
+        $city->languages()->sync($request->get('languages'));
+
+        return redirect()->route('cities.show', ['country' => $country, 'city' => $city]);
     }
 
     /**
@@ -128,7 +130,7 @@ class CitiesController extends Controller
             [
                 'city'   => $city,
                 'country'    => $city->country,
-                'languages' => $city->languages->merge($city->country->languages),
+                'languages' => $city->languages->merge($country->languages),
             ]
         );
     }
