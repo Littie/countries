@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CityRequest;
+use App\Http\Requests\CitiesRequest;
 use App\Models\Cities;
 use App\Models\Countries;
 use App\Models\Languages;
@@ -50,12 +50,12 @@ class CitiesController extends Controller
     /**
      * Store city to db.
      *
-     * @param CityRequest $request
+     * @param CitiesRequest $request
      * @param Countries $country
      *
      * @return RedirectResponse
      */
-    public function store(CityRequest $request, Countries $country): RedirectResponse
+    public function store(CitiesRequest $request, Countries $country): RedirectResponse
     {
         $city = $country->cities()->create([
             'name' => $request->get('name'),
@@ -87,13 +87,13 @@ class CitiesController extends Controller
     /**
      * Update city in db.
      *
-     * @param CityRequest $request
+     * @param CitiesRequest $request
      * @param Countries $country
      * @param Cities $city
      *
      * @return RedirectResponse
      */
-    public function update(CityRequest $request, Countries $country, Cities $city): RedirectResponse
+    public function update(CitiesRequest $request, Countries $country, Cities $city): RedirectResponse
     {
         $city->update($request->only(['name']));
 

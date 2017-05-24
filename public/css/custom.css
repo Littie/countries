@@ -1,9 +1,6 @@
-.country_edit {
-    float: left;
-    margin-right: 10px;
-}
-
-.city_edit {
+.country_edit,
+.city_edit,
+.language_edit {
     float: left;
     margin-right: 10px;
 }

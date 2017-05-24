@@ -39,3 +39,15 @@ Route::group([
     Route::delete('{city}', ['uses' => 'CitiesController@destroy', 'as' => '.destroy']);
     Route::get('countries/{country}/cities/{city}', ['uses' => 'CitiesController@show', 'as' => '.show']);
 });
+
+Route::group([
+    'as'     => 'languages',
+    'prefix' => 'languages',
+], function () {
+    Route::get('/', ['uses' => 'LanguagesController@index', 'as' => '.index']);
+    Route::get('create', ['uses' => 'LanguagesController@create', 'as' => '.create']);
+    Route::post('/', ['uses' => 'LanguagesController@store', 'as' => '.store']);
+    Route::get('{language}/edit', ['uses' => 'LanguagesController@edit', 'as' => '.edit']);
+    Route::put('{language}', ['uses' => 'LanguagesController@update', 'as' => '.update']);
+    Route::delete('{language}', ['uses' => 'LanguagesController@destroy', 'as' => '.destroy']);
+});

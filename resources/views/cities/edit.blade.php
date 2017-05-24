@@ -8,7 +8,7 @@
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title">City name:</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ $city->getAttribute('name') }}" placeholder="City name" required>
+            <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $city->getAttribute('name')) }}" placeholder="City name" required>
         </div>
 
         <div class="form-group">
