@@ -52,7 +52,7 @@ class CitiesController extends Controller
      *
      * @param CityRequest $request
      * @param Countries $country
-     * 
+     *
      * @return RedirectResponse
      */
     public function store(CityRequest $request, Countries $country): RedirectResponse
