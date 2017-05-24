@@ -19,7 +19,7 @@
                         <a class="btn btn-primary city_edit" href="{{ route('cities.edit', ['country' => $city->country, 'city' => $city]) }}">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
-                        <form method="POST" action="{{ route('cities.destroy', ['id' => $city]) }}">
+                        <form method="POST" action="{{ route('cities.destroy', ['countries' => $city->country, 'city' => $city]) }}">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <button class="btn btn-danger" type="submit">

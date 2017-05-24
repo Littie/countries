@@ -105,11 +105,12 @@ class CitiesController extends Controller
     /**
      * Delete city from db.
      *
+     * @param Countries $country
      * @param Cities $city
      *
      * @return RedirectResponse
      */
-    public function destroy(Cities $city): RedirectResponse
+    public function destroy(Countries $country, Cities $city): RedirectResponse
     {
         $city->delete();
 

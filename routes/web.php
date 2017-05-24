@@ -25,19 +25,20 @@ Route::group([
     Route::get('{country}/edit', ['uses' => 'CountriesController@edit', 'as' => '.edit']);
     Route::put('{country}', ['uses' => 'CountriesController@update', 'as' => '.update']);
     Route::delete('{country}', ['uses' => 'CountriesController@destroy', 'as' => '.destroy']);
-    Route::get('{country}', ['uses' => 'CountriesController@show', 'as' => '.show']);
+    Route::get('{country}', ['uses' => 'CountriesController@show', 'as' => '.show'])->where('country', '[0-9]+');
 });
 
 Route::group([
-    'as' => 'cities',
+    'as'     => 'cities',
+    'prefix' => 'countries',
 ], function () {
     Route::get('cities', ['uses' => 'CitiesController@index', 'as' => '.index']);
-    Route::get('countries/{country}/cities/create', ['uses' => 'CitiesController@create', 'as' => '.create']);
-    Route::post('countries/{country}/cities', ['uses' => 'CitiesController@store', 'as' => '.store']);
-    Route::get('countries/{country}/cities/{city}/edit', ['uses' => 'CitiesController@edit', 'as' => '.edit']);
-    Route::put('countries/{country?}/cities/{city}', ['uses' => 'CitiesController@update', 'as' => '.update']);
-    Route::delete('{city}', ['uses' => 'CitiesController@destroy', 'as' => '.destroy']);
-    Route::get('countries/{country}/cities/{city}', ['uses' => 'CitiesController@show', 'as' => '.show']);
+    Route::get('{country}/cities/create', ['uses' => 'CitiesController@create', 'as' => '.create']);
+    Route::post('{country}/cities', ['uses' => 'CitiesController@store', 'as' => '.store']);
+    Route::get('{country}/cities/{city}/edit', ['uses' => 'CitiesController@edit', 'as' => '.edit']);
+    Route::put('{country?}/cities/{city}', ['uses' => 'CitiesController@update', 'as' => '.update']);
+    Route::delete('{country}/cities/{city}', ['uses' => 'CitiesController@destroy', 'as' => '.destroy']);
+    Route::get('{country}/cities/{city}', ['uses' => 'CitiesController@show', 'as' => '.show']);
 });
 
 Route::group([
