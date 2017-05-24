@@ -35,12 +35,15 @@ class CitiesController extends Controller
     /**
      * Display create city page.
      *
+     * @param Countries $country
+     *
      * @return View
      */
-    public function create(): View
+    public function create(Countries $country): View
     {
-        return view('countries.create', [
-            'languages' => Languages::all(),
+        return view('cities.create', [
+            'country' => $country,
+            'languages' => Languages::all()->diff($country->languages),
         ]);
     }
 
@@ -49,15 +52,18 @@ class CitiesController extends Controller
      *
      * @param CityRequest $request
      *
+     * @param Countries $country
      * @return RedirectResponse
      */
-    public function store(CityRequest $request): RedirectResponse
+    public function store(CityRequest $request, Countries $country): RedirectResponse
     {
-        $country = Countries::create($request->only(['name', 'code']));
+        $city = $country->cities()->create([
+            'name' => $request->get('name'),
+        ]);
 
-        $country->languages()->sync($request->get('languages'));
+        $city->languages()->sync($request->get('languages'));
 
-        return back();
+        return redirect()->route('countries.show', ['country' => $country]);
     }
 
     /**

@@ -1,9 +1,6 @@
 @extends('welcome')
 
 @section('content_area')
-    <div>
-        <a href="{{ route('cities.create') }}" class="btn btn-primary btn-success">Create city</a>
-    </div>
     <table class="table">
         <thead>
         <tr>

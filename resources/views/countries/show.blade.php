@@ -22,5 +22,8 @@
             <h3>Empty languages</h3>
         @endif
     </ul>
+    <div class="pull-right">
+        <a href="{{ route('cities.create', ['country' => $country]) }}" class="btn btn-primary btn-success">Create city</a>
+    </div>
     <a href="{{ url()->previous() }}" class="btn btn-default">Back</a>
 @endsection
