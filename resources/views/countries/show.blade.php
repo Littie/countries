@@ -23,7 +23,7 @@
         @endif
     </ul>
     <div class="pull-right">
-        <a href="{{ route('cities.create', ['country' => $country]) }}" class="btn btn-primary btn-success">Create city</a>
+        <a href="{{ route('cities.create', ['country' => $country]) }}" class="btn btn-primary btn-success">Add city</a>
     </div>
     <a href="{{ url()->previous() }}" class="btn btn-default">Back</a>
 @endsection
