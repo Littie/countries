@@ -111,11 +111,12 @@ class CitiesController extends Controller
     /**
      * Show single city information.
      *
+     * @param Countries $country
      * @param Cities $city
      *
      * @return View
      */
-    public function show(Cities $city): View
+    public function show(Countries $country, Cities $city): View
     {
         return view('cities.show',
             [

@@ -15,7 +15,7 @@
         @foreach($cities as $city)
             <tr>
                 <td>
-                    <a href="{{ route('cities.show', ['id' => $city]) }}">{{ $city->getAttribute('name') }}</a>
+                    <a href="{{ route('cities.show', ['country' => $city->country, 'city' => $city]) }}">{{ $city->getAttribute('name') }}</a>
                 </td>
                 <td>
                     <div class="action-block">

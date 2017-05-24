@@ -30,13 +30,12 @@ Route::group([
 
 Route::group([
     'as' => 'cities',
-    'prefix' => 'cities',
 ], function () {
-    Route::get('/', ['uses' => 'CitiesController@index', 'as' => '.index']);
+    Route::get('cities', ['uses' => 'CitiesController@index', 'as' => '.index']);
     Route::get('create', ['uses' => 'CitiesController@create', 'as' => '.create']);
     Route::post('/', ['uses' => 'CitiesController@store', 'as' => '.store']);
     Route::get('{city}/edit', ['uses' => 'CitiesController@edit', 'as' => '.edit']);
     Route::put('{city}', ['uses' => 'CitiesController@update', 'as' => '.update']);
     Route::delete('{city}', ['uses' => 'CitiesController@destroy', 'as' => '.destroy']);
-    Route::get('{city}', ['uses' => 'CitiesController@show', 'as' => '.show']);
+    Route::get('countries/{country}/cities/{city}', ['uses' => 'CitiesController@show', 'as' => '.show']);
 });
