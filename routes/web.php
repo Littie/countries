@@ -58,5 +58,6 @@ Route::group([
     'prefix' => 'check',
 ], function () {
     Route::get('/', ['uses' => 'CheckLanguagesController@index', 'as' => '.index']);
-    Route::get('{country}', ['uses' => 'CheckLanguagesController@getCountryCities', 'as' => 'getCities']);
+    Route::get('cities/{country}', ['uses' => 'CheckLanguagesController@getCountryCities', 'as' => 'getCities']);
+    Route::get('languages/{city}', ['uses' => 'CheckLanguagesController@getCityLanguages', 'as' => 'getLanguages']);
 });

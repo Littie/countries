@@ -14,13 +14,9 @@
     </ul>
     <h3>{{ trans('countries.show.languages_header') }}</h3>
     <ul>
-        @if (count($languages))
-            @foreach($languages as $language)
-                <li>{{ $language->getAttribute('name') }}</li>
-            @endforeach
-        @else
-            <h3>{{ trans('countries.show.empty') }}</h3>
-        @endif
+        @foreach($languages as $language)
+            <li>{{ $language->getAttribute('name') }}</li>
+        @endforeach
     </ul>
     <div class="pull-right">
         <a href="{{ route('cities.create', ['country' => $country]) }}"

@@ -40,7 +40,7 @@ return [
     'show'   => [
         'city_header'      => 'Cities',
         'languages_header' => 'Languages',
-        'empty'            => 'Empty languages',
+        'empty'            => 'Empty cities',
         'buttons'          => [
             'add'  => 'Add city',
             'back' => 'Back',
