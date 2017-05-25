@@ -2,14 +2,15 @@
 
 @section('content_area')
     <div>
-        <a href="{{ route('languages.create') }}" class="btn btn-primary btn-success">Create language</a>
+        <a href="{{ route('languages.create') }}"
+           class="btn btn-primary btn-success">{{ trans('languages.index.buttons.create') }}</a>
     </div>
     <table class="table">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Code</th>
-            <th>Actions</th>
+            <th>{{ trans('languages.index.table.headers.name') }}</th>
+            <th>{{ trans('languages.index.table.headers.code') }}</th>
+            <th>{{ trans('languages.index.table.headers.action') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -23,8 +24,9 @@
                 </td>
                 <td>
                     <div class="action-block">
-                        <a class="btn btn-primary language_edit" href="{{ route('languages.edit', ['language' => $language]) }}">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <a class="btn btn-primary language_edit"
+                           href="{{ route('languages.edit', ['language' => $language]) }}">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
                         <form method="POST" action="{{ route('languages.destroy', ['language' => $language]) }}">
                             {{ method_field('DELETE') }}

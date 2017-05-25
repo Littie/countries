@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 return [
     'index' => [
-        'table' => [
+        'table'   => [
             'headers' => [
-                'name' => 'Name',
-                'code' => 'Code',
+                'name'   => 'Name',
+                'code'   => 'Code',
                 'action' => 'Action',
             ],
         ],
@@ -17,32 +17,32 @@ return [
     ],
     'create' => [
         'header' => 'Create country',
-        'form' => [
-            'name' => 'Country name',
-            'code' => 'Country code',
+        'form'   => [
+            'name'      => 'Country name',
+            'code'      => 'Country code',
             'languages' => 'Add languages',
-            'buttons' => [
+            'buttons'   => [
                 'create' => 'Create',
             ],
         ],
     ],
-    'edit' => [
+    'edit'   => [
         'header' => 'Edit country',
-        'form' => [
-            'name' => 'Country name',
-            'code' => 'Country code',
+        'form'   => [
+            'name'      => 'Country name',
+            'code'      => 'Country code',
             'languages' => 'Change languages',
-            'buttons' => [
+            'buttons'   => [
                 'update' => 'Update',
             ],
         ],
     ],
-    'show' => [
-        'city_header' => 'Cities',
+    'show'   => [
+        'city_header'      => 'Cities',
         'languages_header' => 'Languages',
-        'empty' => 'Empty languages',
-        'buttons' => [
-            'add' => 'Add city',
+        'empty'            => 'Empty languages',
+        'buttons'          => [
+            'add'  => 'Add city',
             'back' => 'Back',
         ],
     ],

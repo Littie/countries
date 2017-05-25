@@ -3,38 +3,38 @@
 declare(strict_types = 1);
 
 return [
-    'index' => [
+    'index'  => [
         'table' => [
             'headers' => [
-                'name' => 'Name',
+                'name'   => 'Name',
                 'action' => 'Actions',
             ],
         ],
     ],
     'create' => [
         'header' => 'Create city',
-        'form' => [
-            'name' => 'City name',
+        'form'   => [
+            'name'      => 'City name',
             'languages' => 'Add languages',
-            'buttons' => [
+            'buttons'   => [
                 'create' => 'Create',
             ],
         ],
     ],
-    'edit' => [
+    'edit'   => [
         'header' => 'Edit city',
-        'form' => [
-            'name' => 'City name',
+        'form'   => [
+            'name'      => 'City name',
             'languages' => 'Change languages',
-            'buttons' => [
+            'buttons'   => [
                 'update' => 'Update',
             ],
         ],
     ],
-    'show' => [
-        'country_header' => 'Country is',
+    'show'   => [
+        'country_header'   => 'Country is',
         'languages_header' => 'Languages',
-        'buttons' => [
+        'buttons'          => [
             'back' => 'Back',
         ],
     ],
