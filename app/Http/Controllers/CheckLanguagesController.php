@@ -15,6 +15,8 @@ use Illuminate\View\View;
 class CheckLanguagesController extends Controller
 {
     /**
+     * Index page.
+     *
      * @return View
      */
     public function index()
