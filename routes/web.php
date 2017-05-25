@@ -52,3 +52,11 @@ Route::group([
     Route::put('{language}', ['uses' => 'LanguagesController@update', 'as' => '.update']);
     Route::delete('{language}', ['uses' => 'LanguagesController@destroy', 'as' => '.destroy']);
 });
+
+Route::group([
+    'as' => 'check',
+    'prefix' => 'check',
+], function () {
+    Route::get('/', ['uses' => 'CheckLanguagesController@index', 'as' => '.index']);
+    Route::get('{country}', ['uses' => 'CheckLanguagesController@getCountryCities', 'as' => 'getCities']);
+});

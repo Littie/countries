@@ -35,4 +35,12 @@ return [
             ],
         ],
     ],
+    'check'  => [
+        'index' => [
+            'header' => 'Check language',
+            'form'   => [
+                'country' => 'Select country',
+            ],
+        ],
+    ],
 ];

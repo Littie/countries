@@ -25,6 +25,7 @@
 <!-- Scripts -->
 @section('scripts')
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/handleAjax.js') }}"></script>
 @show
 </body>
 </html>
