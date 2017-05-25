@@ -35,7 +35,7 @@ class CheckLanguagesController extends Controller
      */
     public function getCountryCities(Countries $country): JsonResponse
     {
-        return response()->json($country->cities);
+        return response()->json(['cities' => $country->cities, 'languages' => $country->languages]);
     }
 
     /**
@@ -47,6 +47,6 @@ class CheckLanguagesController extends Controller
      */
     public function getCityLanguages(Cities $city): JsonResponse
     {
-        return response()->json($city->languages);
+        return response()->json(['languages' => $city->languages->merge($city->country->languages)]);
     }
 }

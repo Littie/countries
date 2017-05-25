@@ -41,6 +41,14 @@ return [
             'form'   => [
                 'country' => 'Select country',
             ],
+            'table'  => [
+                'head'    => 'Table of languages',
+                'headers' => [
+                    'name'  => 'Language name',
+                    'code'  => 'Language code',
+                    'place' => 'Place',
+                ],
+            ],
         ],
     ],
 ];

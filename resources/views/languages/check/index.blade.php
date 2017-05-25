@@ -12,4 +12,18 @@
             </select>
         </div>
     </form>
+
+    <h2>{{ trans('languages.check.index.table.head') }}</h2>
+    <table id="check_tables" class="table">
+        <thead>
+            <tr>
+                {{--<td>{{ trans('languages.check.index.table.headers.place') }}</td>--}}
+                <td>{{ trans('languages.check.index.table.headers.name') }}</td>
+                <td>{{ trans('languages.check.index.table.headers.code') }}</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
 @endsection
