@@ -21,4 +21,4 @@ Fill tables by faker data. Use follow command (optional).
 ```
 php artisan db:seed
 ```
-If you don't wont use migration, use dump on ```public/dump``` folder of project
+If you don't want use migration, use dump on ```public/dump``` folder of project

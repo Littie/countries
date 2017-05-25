@@ -13,7 +13,7 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @show
+@show
 <!-- Scripts -->
 
 </head>

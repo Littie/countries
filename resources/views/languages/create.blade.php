@@ -7,12 +7,14 @@
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title">{{ trans('languages.create.form.name') }}:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="{{ trans('languages.create.form.name') }}" required>
+            <input type="text" class="form-control" id="name" name="name"
+                   placeholder="{{ trans('languages.create.form.name') }}" required>
         </div>
 
         <div class="form-group">
             <label for="Code">{{ trans('languages.create.form.code') }}:</label>
-            <input type="text" class="form-control" id="code" name="code" placeholder="{{ trans('languages.create.form.code') }}" required>
+            <input type="text" class="form-control" id="code" name="code"
+                   placeholder="{{ trans('languages.create.form.code') }}" required>
         </div>
 
         <div class="form-group">
