@@ -18,6 +18,10 @@ $(function () {
                     selectList.append($('<option/>').attr('value', element.id).html(element.name));
                 });
 
+                if (response.length === 0) {
+                    selectList = $('<h3/>').html('Countries not found');
+                }
+
                 form.append(label);
                 form.append(selectList);
             },
