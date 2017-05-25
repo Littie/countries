@@ -2,7 +2,7 @@ $(function () {
     console.log('hello');
 
     $('#countries').change(function () {
-        var selected = $("#countries option:selected");
+        let selected = $("#countries").find("option:selected");
 
         $.ajax({
             url: '/check/cities/' + selected.val(),
@@ -20,7 +20,7 @@ $(function () {
 
     // $('#cities').change(function () {
     $('#check_cities').on('change', '#cities', function () {
-        var selected = $("#cities option:selected");
+        let selected = $("#cities").find("option:selected");
 
         $.ajax({
             url: '/check/languages/' + selected.val(),
@@ -39,7 +39,7 @@ $(function () {
         $('label[for="cities"]').remove();
 
         let form = $('#check_cities');
-        let label = $('<label/>').attr({for: 'cities'}).addClass('control-label').html('Select city:')
+        let label = $('<label/>').attr({for: 'cities'}).addClass('control-label').html('Select city:');
         let selectList = $('<select/>').attr({name: 'cities', id: 'cities'}).addClass('form-control');
 
         $.each(response['cities'], function (item, element) {
