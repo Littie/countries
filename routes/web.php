@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+/**
+ * Routes for countries.
+ */
 Route::group([
     'as' => 'countries',
     'prefix' => 'countries',
@@ -28,6 +31,9 @@ Route::group([
     Route::get('{country}', ['uses' => 'CountriesController@show', 'as' => '.show'])->where('country', '[0-9]+');
 });
 
+/**
+ * Routes for cities.
+ */
 Route::group([
     'as'     => 'cities',
     'prefix' => 'countries',
@@ -41,6 +47,9 @@ Route::group([
     Route::get('{country}/cities/{city}', ['uses' => 'CitiesController@show', 'as' => '.show']);
 });
 
+/**
+ * Routes for languages.
+ */
 Route::group([
     'as'     => 'languages',
     'prefix' => 'languages',
@@ -53,6 +62,9 @@ Route::group([
     Route::delete('{language}', ['uses' => 'LanguagesController@destroy', 'as' => '.destroy']);
 });
 
+/**
+ * Routes for ajax query.
+ */
 Route::group([
     'as' => 'check',
     'prefix' => 'check',
