@@ -7,19 +7,14 @@ return [
         'table' => [
             'headers' => [
                 'name' => 'Name',
-                'code' => 'Code',
-                'action' => 'Action',
+                'action' => 'Actions',
             ],
-        ],
-        'buttons' => [
-            'create' => 'Create country',
         ],
     ],
     'create' => [
-        'header' => 'Create country',
+        'header' => 'Create city',
         'form' => [
-            'name' => 'Country name',
-            'code' => 'Country code',
+            'name' => 'City name',
             'languages' => 'Add languages',
             'buttons' => [
                 'create' => 'Create',
@@ -27,10 +22,9 @@ return [
         ],
     ],
     'edit' => [
-        'header' => 'Edit country',
+        'header' => 'Edit city',
         'form' => [
-            'name' => 'Country name',
-            'code' => 'Country code',
+            'name' => 'City name',
             'languages' => 'Change languages',
             'buttons' => [
                 'update' => 'Update',
@@ -38,11 +32,9 @@ return [
         ],
     ],
     'show' => [
-        'city_header' => 'Cities',
+        'country_header' => 'Country is',
         'languages_header' => 'Languages',
-        'empty' => 'Empty languages',
         'buttons' => [
-            'add' => 'Add city',
             'back' => 'Back',
         ],
     ],

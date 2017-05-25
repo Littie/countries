@@ -4,8 +4,8 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Actions</th>
+            <th>{{ trans('cities.index.table.headers.name') }}</th>
+            <th>{{ trans('cities.index.table.headers.action') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -16,10 +16,12 @@
                 </td>
                 <td>
                     <div class="action-block">
-                        <a class="btn btn-primary city_edit" href="{{ route('cities.edit', ['country' => $city->country, 'city' => $city]) }}">
+                        <a class="btn btn-primary city_edit"
+                           href="{{ route('cities.edit', ['country' => $city->country, 'city' => $city]) }}">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
-                        <form method="POST" action="{{ route('cities.destroy', ['countries' => $city->country, 'city' => $city]) }}">
+                        <form method="POST"
+                              action="{{ route('cities.destroy', ['countries' => $city->country, 'city' => $city]) }}">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <button class="btn btn-danger" type="submit">
